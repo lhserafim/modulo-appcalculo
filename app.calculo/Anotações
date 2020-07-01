@@ -54,4 +54,11 @@ TRABALHANDO COM MÓDULOS NO JAVA
             3.6.1.2. Posso declarar mais de 1 módulo que terá acesso pelo exports to
                      Ex.:
                      exports br.com.alvoradatecnologia.app.calculo.interno to app.financeiro, app.loggin;
-                     
+    3.7. Módulos e Reflection
+        3.7.1. Existe uma função no JAVA que permite que você altere atributos privados de uma classe. Esse conceito é
+               conhecido como Reflection
+            3.7.1.1. Caso seja necessário usar isso, com módulos, basta abrir o módulo
+                     Ex.1: Abrindo o módulo
+                     open module app.calculo {}
+                     Ex.2: Abrindo
+                     opens br.com.alvoradatecnologia.app.calculo.interno to app.financeiro;
