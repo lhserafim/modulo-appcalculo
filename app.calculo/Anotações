@@ -3,6 +3,7 @@ TRABALHANDO COM MÓDULOS NO JAVA
     1.1. Permitir ter um controle maior do que é compartilhado com outros módulos do sistema
     1.2. Reduzir dependências desnecessárias
     1.3. Evitar dependência cíclica
+    1.4. A própria rotina evita dependência cíclica
 2. Since
     2.1. Java 9
 3. Implementação
@@ -45,3 +46,11 @@ TRABALHANDO COM MÓDULOS NO JAVA
                financeiro <- calculo <- loggin
                Para que financeiro use um método de loggin, uso uma dependencia transitiva
                requires transitive app.loggin; // Assim o outro módulo terá acesso a algo do módulo loggin, via módulo calculo
+    3.6. Exports To
+        3.6.1. É quando explicitamente determinamos que determinado módulo INTERNO será exportado apenas para outro módulo
+               Ex.:
+               exports br.com.alvoradatecnologia.app.calculo.interno to app.financeiro;
+            3.6.1.1. As vezes é melhor trocar de pacote!
+            3.6.1.2. Posso declarar mais de 1 módulo que terá acesso pelo exports to
+                     Ex.:
+                     exports br.com.alvoradatecnologia.app.calculo.interno to app.financeiro, app.loggin;
