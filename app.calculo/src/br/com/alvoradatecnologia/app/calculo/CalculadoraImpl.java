@@ -1,10 +1,11 @@
 package br.com.alvoradatecnologia.app.calculo;
 
+import br.com.alvoradatecnologia.app.Calculadora;
 import br.com.alvoradatecnologia.app.calculo.interno.OperacoesAritmeticas;
 import br.com.alvoradatecnologia.app.loggin.Logger;
 
 // Neste nosso exemplo, a classe Calculadora será tratada para ser exibida fora do módulo
-public class Calculadora {
+public class CalculadoraImpl implements Calculadora {
     // Exemplo de relacionamento TEM UM
     private OperacoesAritmeticas operacoesAritmeticas = new OperacoesAritmeticas();
 

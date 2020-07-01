@@ -62,3 +62,28 @@ TRABALHANDO COM MÓDULOS NO JAVA
                      open module app.calculo {}
                      Ex.2: Abrindo
                      opens br.com.alvoradatecnologia.app.calculo.interno to app.financeiro;
+4. Interface - Provides With & Uses
+    4.1. Implementar uma interface para chamar a Implementação de CalculadoraImpl
+    4.2. Implementação
+        4.2.1. Criar uma interface dentro do módulo api
+               Ex.:
+               public interface Calculadora {
+                   // Implementando a assinatura do método da classe CalculadoraImpl, do app.calculo
+                   public double somar(double... nums);
+               }
+        4.2.2. Exportar o módulo, para que seja possível a outro módulo usar a interface
+               Ex.:
+                module app.api {
+                    exports br.com.alvoradatecnologia.app;
+                }
+        4.2.3. requerer o módulo exportado em calculo, para poder implementar a interface na classe CalculadoraImpl
+               Ex.:
+               requires app.api;
+               provides br.com.alvoradatecnologia.app.Calculadora with br.com.alvoradatecnologia.app.calculo.CalculadoraImpl;
+        4.2.4. O módulo financeiro, que é quem vai implementar o Teste, vai requerer a api
+               Ex.:
+               requires app.api; // É usada para que seja utilizada a Interface
+               uses br.com.alvoradatecnologia.app.Calculadora;
+        4.2.5. Por fim, para usar a interface, é necessário implementar um método específico que carrega serviços
+               Ex.: Usando a interface. Que dentro deste contexto é chamada de Service
+               Calculadora calc = ServiceLoader.load(Calculadora.class).findFirst().get();

@@ -1,0 +1,7 @@
+
+
+java:S1128"_Remove this unused import 'br.com.alvoradatecnologia.app.calculo.interno.OperacoesAritmeticas'.(Ê”îÒşÿÿÿÿ8âÒ¸Õ°.
+n
+java:S1128"RRemove this unused import 'br.com.alvoradatecnologia.app.calculo.CalculadoraImpl'.(’÷Í58„Ò¹Õ°.
+Y
+java:S3655"7Call "Optional#isPresent()" before accessing the value.(Şˆ³šÿÿÿÿÿ8ôÑÅÕ°.

@@ -1,0 +1,33 @@
+
+‡
+Wapp.calculo/src/br/com/alvoradatecnologia/app/calculo/interno/OperacoesAritmeticas.java,3/c/3c3a0f0ecfda782fccdee84291482ee57a742b78
+I
+app.loggin/app.loggin.iml,6/6/66b0011f837745a65c039ca1a56698616a7bafcd
+o
+?app.loggin/src/br/com/alvoradatecnologia/app/loggin/Logger.java,9/c/9c4597653d5414fbaa67995d41ad8ed254d1cf45
+B
+app.financeiro.iml,e/f/efd297f474be79fbfb15c22cea8067ffc1c92746
+O
+app.loggin/src/module-info.java,6/e/6e3279191843a1044e2486808c59d27baefbc499
+C
+app.api/app.api.iml,2/9/2960f9343c7e11122d202d9e9342c93582125e1b
+K
+app.calculo/app.calculo.iml,6/7/672419c564363a435a4d5be228875334383958ab
+z
+Japp.calculo/src/br/com/alvoradatecnologia/app/calculo/CalculadoraImpl.java,e/f/ef72943b72abd2175b72a234a0a60c874b80501e
+v
+Fapp.calculo/src/br/com/alvoradatecnologia/app/calculo/Calculadora.java,5/3/53660b3b3cba871e0946680b9a3dbe41e4237d04
+g
+7src/br/com/alvoradatecnologia/app/financeiro/Teste.java,2/e/2e0eb2e6fc948a7d00ccded9268029abe8ea422e
+j
+:app.api/src/br/com/alvoradatecnologia/app/Calculadora.java,e/c/ec44a76e3fcabc721674fab7267d9164708d7bac
+D
+src/module-info.java,c/d/cdc434daeee688944ced38ff1c9875422db88382
+E
+app.calculo/Anotacoes,7/8/7824cea348ae09ce4acf99fbac35916a6c5e5b01
+v
+Fsrc/br/com/alvoradatecnologia/app/financeiro/TesteUsandoInterface.java,e/a/eace15c0441670c3b1ce895f9b34c99d69e4a509
+L
+app.api/src/module-info.java,a/1/a1c7e569e994395b5d957edcb069a79045ad6abf
+P
+ app.calculo/src/module-info.java,0/2/029222054f3179c11a4806a5c236fab5ecabad40
