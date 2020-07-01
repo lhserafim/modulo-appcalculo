@@ -1,0 +1,47 @@
+TRABALHANDO COM MÓDULOS NO JAVA
+1. Motivação
+    1.1. Permitir ter um controle maior do que é compartilhado com outros módulos do sistema
+    1.2. Reduzir dependências desnecessárias
+    1.3. Evitar dependência cíclica
+2. Since
+    2.1. Java 9
+3. Implementação
+    3.1. Criar um novo projeto e dar o nome do módulo
+    3.2. Em src, criar um novo arquivo do tipo module-info.java
+        3.2.1. Este arquivo inicialmente terá apenas uma linha.
+               Ex.:
+               module app.calculo {}
+    3.3. Criação de classes que SERÃO e NÃO SERÃO exibidas fora do módulo
+         Ex.:
+         Neste nosso exemplo, a classe OperacoesAritmeticas será tratada para NÃO ser exibida fora do módulo
+         Neste nosso exemplo, a classe Calculadora será tratada para ser exibida fora do módulo
+    3.4. Para que uma determinada classe seja visível em outro programa/módulo, preciso alterar o arquivo module-info.java
+        3.4.1. Informar o diretório que será exportado. OS SUBDIRETÓRIOS NÃO SÃO COMPARTILHADOS!
+               Ex.:
+               module app.calculo {
+                   exports br.com.alvoradatecnologia.app.calculo;
+               }
+        3.4.2. Uma vez exportado, posso consumir em outro módulo (financeiro, por exemplo)
+            3.4.2.1. Não é uma operação automática, preciso requerer os módulos
+            3.4.2.2. Requerer o módulo exportado
+                     Ex.: requires app.calculo;
+                3.4.2.2.1. Quando importado, ele vai ficar em vermelho. O IntelliJ vai sugerir para criar a dependência
+        3.4.3. Dentro do IntelliJ, ir em Project Structure e importar o outro projeto (app.financeiro) como módulo
+               dentro do projeto "app".
+               app
+                 app.calculo
+                   src
+                     ...
+                 app.financeiro
+                   src
+                     ...
+        3.4.4. É possível criar como módulo, ao invés de criar como projeto e assim ele já é integrado automaticamente
+    3.5. Dependência Transitiva
+        3.5.1. Quando temos 3 módulos "falando entre si", eu posso ter situações onde eu queira acessar algo, que
+               pertence a um módulo que eu não requeri. Eu posso requerer, porem isso nem sempre é uma boa ação.
+               Dependendo do contexto, eu posso usar uma classe intermediária, que já tem acesso (requereu) e dar
+               permissão através desta classe
+               Ex.:
+               financeiro <- calculo <- loggin
+               Para que financeiro use um método de loggin, uso uma dependencia transitiva
+               requires transitive app.loggin; // Assim o outro módulo terá acesso a algo do módulo loggin, via módulo calculo
